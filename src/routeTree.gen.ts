@@ -9,38 +9,348 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as TermsOfServiceRouteImport } from './routes/terms-of-service'
+import { Route as TeamRouteImport } from './routes/team'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as ReviewsRouteImport } from './routes/reviews'
+import { Route as ProcessRouteImport } from './routes/process'
+import { Route as PrivacyPolicyRouteImport } from './routes/privacy-policy'
+import { Route as FaqRouteImport } from './routes/faq'
+import { Route as DisclaimerRouteImport } from './routes/disclaimer'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as CertificationsRouteImport } from './routes/certifications'
+import { Route as CaseStudiesRouteImport } from './routes/case-studies'
+import { Route as BlogRouteImport } from './routes/blog'
+import { Route as AccessibilityRouteImport } from './routes/accessibility'
+import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ServicesSlugRouteImport } from './routes/services.$slug'
+import { Route as LocationsSlugRouteImport } from './routes/locations.$slug'
 
+const TermsOfServiceRoute = TermsOfServiceRouteImport.update({
+  id: '/terms-of-service',
+  path: '/terms-of-service',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TeamRoute = TeamRouteImport.update({
+  id: '/team',
+  path: '/team',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ReviewsRoute = ReviewsRouteImport.update({
+  id: '/reviews',
+  path: '/reviews',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProcessRoute = ProcessRouteImport.update({
+  id: '/process',
+  path: '/process',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PrivacyPolicyRoute = PrivacyPolicyRouteImport.update({
+  id: '/privacy-policy',
+  path: '/privacy-policy',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FaqRoute = FaqRouteImport.update({
+  id: '/faq',
+  path: '/faq',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DisclaimerRoute = DisclaimerRouteImport.update({
+  id: '/disclaimer',
+  path: '/disclaimer',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CertificationsRoute = CertificationsRouteImport.update({
+  id: '/certifications',
+  path: '/certifications',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CaseStudiesRoute = CaseStudiesRouteImport.update({
+  id: '/case-studies',
+  path: '/case-studies',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BlogRoute = BlogRouteImport.update({
+  id: '/blog',
+  path: '/blog',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AccessibilityRoute = AccessibilityRouteImport.update({
+  id: '/accessibility',
+  path: '/accessibility',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ServicesSlugRoute = ServicesSlugRouteImport.update({
+  id: '/services/$slug',
+  path: '/services/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LocationsSlugRoute = LocationsSlugRouteImport.update({
+  id: '/locations/$slug',
+  path: '/locations/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/accessibility': typeof AccessibilityRoute
+  '/blog': typeof BlogRoute
+  '/case-studies': typeof CaseStudiesRoute
+  '/certifications': typeof CertificationsRoute
+  '/contact': typeof ContactRoute
+  '/disclaimer': typeof DisclaimerRoute
+  '/faq': typeof FaqRoute
+  '/privacy-policy': typeof PrivacyPolicyRoute
+  '/process': typeof ProcessRoute
+  '/reviews': typeof ReviewsRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/team': typeof TeamRoute
+  '/terms-of-service': typeof TermsOfServiceRoute
+  '/locations/$slug': typeof LocationsSlugRoute
+  '/services/$slug': typeof ServicesSlugRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/accessibility': typeof AccessibilityRoute
+  '/blog': typeof BlogRoute
+  '/case-studies': typeof CaseStudiesRoute
+  '/certifications': typeof CertificationsRoute
+  '/contact': typeof ContactRoute
+  '/disclaimer': typeof DisclaimerRoute
+  '/faq': typeof FaqRoute
+  '/privacy-policy': typeof PrivacyPolicyRoute
+  '/process': typeof ProcessRoute
+  '/reviews': typeof ReviewsRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/team': typeof TeamRoute
+  '/terms-of-service': typeof TermsOfServiceRoute
+  '/locations/$slug': typeof LocationsSlugRoute
+  '/services/$slug': typeof ServicesSlugRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/accessibility': typeof AccessibilityRoute
+  '/blog': typeof BlogRoute
+  '/case-studies': typeof CaseStudiesRoute
+  '/certifications': typeof CertificationsRoute
+  '/contact': typeof ContactRoute
+  '/disclaimer': typeof DisclaimerRoute
+  '/faq': typeof FaqRoute
+  '/privacy-policy': typeof PrivacyPolicyRoute
+  '/process': typeof ProcessRoute
+  '/reviews': typeof ReviewsRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/team': typeof TeamRoute
+  '/terms-of-service': typeof TermsOfServiceRoute
+  '/locations/$slug': typeof LocationsSlugRoute
+  '/services/$slug': typeof ServicesSlugRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/accessibility'
+    | '/blog'
+    | '/case-studies'
+    | '/certifications'
+    | '/contact'
+    | '/disclaimer'
+    | '/faq'
+    | '/privacy-policy'
+    | '/process'
+    | '/reviews'
+    | '/sitemap.xml'
+    | '/team'
+    | '/terms-of-service'
+    | '/locations/$slug'
+    | '/services/$slug'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/about'
+    | '/accessibility'
+    | '/blog'
+    | '/case-studies'
+    | '/certifications'
+    | '/contact'
+    | '/disclaimer'
+    | '/faq'
+    | '/privacy-policy'
+    | '/process'
+    | '/reviews'
+    | '/sitemap.xml'
+    | '/team'
+    | '/terms-of-service'
+    | '/locations/$slug'
+    | '/services/$slug'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/accessibility'
+    | '/blog'
+    | '/case-studies'
+    | '/certifications'
+    | '/contact'
+    | '/disclaimer'
+    | '/faq'
+    | '/privacy-policy'
+    | '/process'
+    | '/reviews'
+    | '/sitemap.xml'
+    | '/team'
+    | '/terms-of-service'
+    | '/locations/$slug'
+    | '/services/$slug'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRoute
+  AccessibilityRoute: typeof AccessibilityRoute
+  BlogRoute: typeof BlogRoute
+  CaseStudiesRoute: typeof CaseStudiesRoute
+  CertificationsRoute: typeof CertificationsRoute
+  ContactRoute: typeof ContactRoute
+  DisclaimerRoute: typeof DisclaimerRoute
+  FaqRoute: typeof FaqRoute
+  PrivacyPolicyRoute: typeof PrivacyPolicyRoute
+  ProcessRoute: typeof ProcessRoute
+  ReviewsRoute: typeof ReviewsRoute
+  SitemapDotxmlRoute: typeof SitemapDotxmlRoute
+  TeamRoute: typeof TeamRoute
+  TermsOfServiceRoute: typeof TermsOfServiceRoute
+  LocationsSlugRoute: typeof LocationsSlugRoute
+  ServicesSlugRoute: typeof ServicesSlugRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/terms-of-service': {
+      id: '/terms-of-service'
+      path: '/terms-of-service'
+      fullPath: '/terms-of-service'
+      preLoaderRoute: typeof TermsOfServiceRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/team': {
+      id: '/team'
+      path: '/team'
+      fullPath: '/team'
+      preLoaderRoute: typeof TeamRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/reviews': {
+      id: '/reviews'
+      path: '/reviews'
+      fullPath: '/reviews'
+      preLoaderRoute: typeof ReviewsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/process': {
+      id: '/process'
+      path: '/process'
+      fullPath: '/process'
+      preLoaderRoute: typeof ProcessRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/privacy-policy': {
+      id: '/privacy-policy'
+      path: '/privacy-policy'
+      fullPath: '/privacy-policy'
+      preLoaderRoute: typeof PrivacyPolicyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/faq': {
+      id: '/faq'
+      path: '/faq'
+      fullPath: '/faq'
+      preLoaderRoute: typeof FaqRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/disclaimer': {
+      id: '/disclaimer'
+      path: '/disclaimer'
+      fullPath: '/disclaimer'
+      preLoaderRoute: typeof DisclaimerRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/certifications': {
+      id: '/certifications'
+      path: '/certifications'
+      fullPath: '/certifications'
+      preLoaderRoute: typeof CertificationsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/case-studies': {
+      id: '/case-studies'
+      path: '/case-studies'
+      fullPath: '/case-studies'
+      preLoaderRoute: typeof CaseStudiesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/blog': {
+      id: '/blog'
+      path: '/blog'
+      fullPath: '/blog'
+      preLoaderRoute: typeof BlogRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/accessibility': {
+      id: '/accessibility'
+      path: '/accessibility'
+      fullPath: '/accessibility'
+      preLoaderRoute: typeof AccessibilityRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -48,22 +358,42 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/services/$slug': {
+      id: '/services/$slug'
+      path: '/services/$slug'
+      fullPath: '/services/$slug'
+      preLoaderRoute: typeof ServicesSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/locations/$slug': {
+      id: '/locations/$slug'
+      path: '/locations/$slug'
+      fullPath: '/locations/$slug'
+      preLoaderRoute: typeof LocationsSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
+  AccessibilityRoute: AccessibilityRoute,
+  BlogRoute: BlogRoute,
+  CaseStudiesRoute: CaseStudiesRoute,
+  CertificationsRoute: CertificationsRoute,
+  ContactRoute: ContactRoute,
+  DisclaimerRoute: DisclaimerRoute,
+  FaqRoute: FaqRoute,
+  PrivacyPolicyRoute: PrivacyPolicyRoute,
+  ProcessRoute: ProcessRoute,
+  ReviewsRoute: ReviewsRoute,
+  SitemapDotxmlRoute: SitemapDotxmlRoute,
+  TeamRoute: TeamRoute,
+  TermsOfServiceRoute: TermsOfServiceRoute,
+  LocationsSlugRoute: LocationsSlugRoute,
+  ServicesSlugRoute: ServicesSlugRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}
