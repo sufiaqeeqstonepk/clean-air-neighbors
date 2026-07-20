@@ -5,6 +5,8 @@ import { PageHeader, Section } from "@/components/site/PageHeader";
 import { getLocationContent } from "@/lib/content";
 import { business, services } from "@/lib/business";
 
+type LocContent = NonNullable<ReturnType<typeof getLocationContent>>;
+
 export const Route = createFileRoute("/locations/$slug")({
   loader: ({ params }) => {
     const c = getLocationContent(params.slug);
@@ -29,7 +31,7 @@ export const Route = createFileRoute("/locations/$slug")({
 });
 
 function LocationPage() {
-  const c = Route.useLoaderData();
+  const c = Route.useLoaderData() as LocContent;
   return (
     <Layout>
       <PageHeader eyebrow="Service Area" title={c.h1} subtitle={c.intro}>

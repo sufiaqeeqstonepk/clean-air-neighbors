@@ -31,7 +31,7 @@ export const Route = createFileRoute("/services/$slug")({
 });
 
 function ServicePage() {
-  const c = Route.useLoaderData();
+  const c = Route.useLoaderData() as ServiceContent;
   return (
     <Layout>
       <PageHeader eyebrow="Service" title={c.h1} subtitle={c.intro}>
