@@ -2,7 +2,7 @@ import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { Phone, CheckCircle2 } from "lucide-react";
 import { Layout } from "@/components/site/Layout";
 import { PageHeader, Section } from "@/components/site/PageHeader";
-import { getServiceContent } from "@/lib/content";
+import { getServiceContent, type ServiceContent } from "@/lib/content";
 import { serviceSchema } from "@/components/site/SchemaMarkup";
 import { business, locations, services } from "@/lib/business";
 
