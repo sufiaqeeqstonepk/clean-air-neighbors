@@ -1,3 +1,5 @@
+import { ncCities } from "@/lib/nc-cities";
+
 export const business = {
   name: "Greensboro Mold Removal Company",
   phone: "+1 (743) 373-1171",
@@ -36,13 +38,4 @@ export const services = [
   { slug: "emergency-mold-services", title: "Emergency Mold Services (24/7)", short: "Same-day response for floods and active leaks." },
 ];
 
-export const locations = [
-  { slug: "greensboro-nc", city: "Greensboro", state: "NC" },
-  { slug: "high-point-nc", city: "High Point", state: "NC" },
-  { slug: "winston-salem-nc", city: "Winston-Salem", state: "NC" },
-  { slug: "kernersville-nc", city: "Kernersville", state: "NC" },
-  { slug: "jamestown-nc", city: "Jamestown", state: "NC" },
-  { slug: "oak-ridge-nc", city: "Oak Ridge", state: "NC" },
-  { slug: "summerfield-nc", city: "Summerfield", state: "NC" },
-  { slug: "burlington-nc", city: "Burlington", state: "NC" },
-];
+export const locations = ncCities.map(c => ({ slug: c.slug, city: c.city, state: c.state }));
