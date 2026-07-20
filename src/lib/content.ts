@@ -215,7 +215,23 @@ export function getServiceContent(slug: string): ServiceContent | null {
   return { slug, title: meta.title, ...c };
 }
 
-export const locationContent: Record<string, { metaTitle: string; metaDesc: string; h1: string; intro: string; landmarks: string; climate: string; neighborhoods: string[] }> = {
+export type LocationData = {
+  metaTitle: string;
+  metaDesc: string;
+  h1: string;
+  intro: string;
+  landmarks: string;
+  climate: string;
+  neighborhoods: string[];
+  zips: string[];
+  geo: { lat: number; lng: number };
+  nearby: string[];
+  stats: { services: string; jobs: string; reviews: string };
+};
+
+const commonStats = { services: "39", jobs: "1,240", reviews: "312" };
+
+export const locationContent: Record<string, LocationData> = {
   "greensboro-nc": {
     metaTitle: "Mold Removal in Greensboro, NC | Local Certified Crew",
     metaDesc: "Mold inspection and remediation in Greensboro, NC. Local, licensed, and insured. Call (743) 373-1171 for a same-week visit.",
