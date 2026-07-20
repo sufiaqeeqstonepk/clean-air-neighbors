@@ -156,11 +156,22 @@ export function LocationTemplate(props: LocationTemplateProps) {
     <>
       {/* Hero */}
       <section className="border-b bg-gradient-to-b from-brand-light to-background">
-        <div className="container-x py-14 md:py-20">
-          <p className="text-sm font-semibold uppercase tracking-wider text-brand">Serving {city}, {state}</p>
-          <h1 className="mt-2 max-w-4xl">Best Certified Mold Removal Company in {city}, {state} near me</h1>
-          <p className="mt-4 max-w-3xl text-lg text-muted-foreground">{intro}</p>
-          <div className="mt-6"><CallButton /></div>
+        <div className="container-x py-14 md:py-20 grid gap-10 lg:grid-cols-2 items-center">
+          <div>
+            <p className="text-sm font-semibold uppercase tracking-wider text-brand">Serving {city}, {state}</p>
+            <h1 className="mt-2 max-w-4xl">Best Certified Mold Removal Company in {city}, {state} near me</h1>
+            <p className="mt-4 max-w-3xl text-lg text-muted-foreground">{intro}</p>
+            <div className="mt-6"><CallButton /></div>
+          </div>
+          <div className="overflow-hidden rounded-lg border bg-card shadow-sm">
+            <img
+              src={imgInspection}
+              alt={`Certified mold inspector checking a home wall for moisture in ${city}, ${state}`}
+              width={1024}
+              height={1024}
+              className="h-full w-full object-cover"
+            />
+          </div>
         </div>
       </section>
 
@@ -169,18 +180,78 @@ export function LocationTemplate(props: LocationTemplateProps) {
         <h2>{city}, {state} Mold Remediation</h2>
         <p className="mt-3 max-w-3xl text-foreground/80">{climate}</p>
         <div className="mt-8 grid gap-6 md:grid-cols-2">
-          <div className="rounded-lg border bg-card p-6">
-            <h4 className="text-xl font-semibold">Residential Mold Removal Services</h4>
-            <p className="mt-3 text-foreground/80">We work on homes, townhouses, condos, and rentals across {city}. Every job starts with finding the water source, then containment, safe removal, and a clean rebuild. You get a written report and a warranty on the work we did.</p>
-            <div className="mt-4"><CallButton /></div>
+          <div className="overflow-hidden rounded-lg border bg-card">
+            <img
+              src={imgBeforeAfter}
+              alt={`Before and after residential mold removal in a ${city}, ${state} home`}
+              width={1024}
+              height={1024}
+              loading="lazy"
+              className="h-56 w-full object-cover"
+            />
+            <div className="p-6">
+              <h4 className="text-xl font-semibold">Residential Mold Removal Services</h4>
+              <p className="mt-3 text-foreground/80">We work on homes, townhouses, condos, and rentals across {city}. Every job starts with finding the water source, then containment, safe removal, and a clean rebuild. You get a written report and a warranty on the work we did.</p>
+              <div className="mt-4"><CallButton /></div>
+            </div>
           </div>
-          <div className="rounded-lg border bg-card p-6">
-            <h4 className="text-xl font-semibold">Commercial Mold Removal Services</h4>
-            <p className="mt-3 text-foreground/80">For offices, retail, restaurants, and multi-unit buildings in {city}, we work after hours when needed and keep the affected area sealed off so business can keep running. We document everything for property managers and health inspectors.</p>
-            <div className="mt-4"><CallButton /></div>
+          <div className="overflow-hidden rounded-lg border bg-card">
+            <img
+              src={imgContainment}
+              alt={`Containment barrier and HEPA air scrubber set up for commercial mold remediation in ${city}, ${state}`}
+              width={1024}
+              height={1024}
+              loading="lazy"
+              className="h-56 w-full object-cover"
+            />
+            <div className="p-6">
+              <h4 className="text-xl font-semibold">Commercial Mold Removal Services</h4>
+              <p className="mt-3 text-foreground/80">For offices, retail, restaurants, and multi-unit buildings in {city}, we work after hours when needed and keep the affected area sealed off so business can keep running. We document everything for property managers and health inspectors.</p>
+              <div className="mt-4"><CallButton /></div>
+            </div>
           </div>
         </div>
       </section>
+
+      {/* Feature strip */}
+      <section className="container-x pb-4">
+        <div className="grid gap-6 md:grid-cols-3">
+          <figure className="overflow-hidden rounded-lg border bg-card">
+            <img
+              src={imgCrawlspace}
+              alt={`Encapsulated crawl space with vapor barrier and dehumidifier in a ${city}, ${state} home`}
+              width={1024}
+              height={1024}
+              loading="lazy"
+              className="h-48 w-full object-cover"
+            />
+            <figcaption className="p-4 text-sm text-muted-foreground">Crawl space encapsulation for {city} homes</figcaption>
+          </figure>
+          <figure className="overflow-hidden rounded-lg border bg-card">
+            <img
+              src={imgAttic}
+              alt={`Attic mold treatment on roof sheathing in a ${city}, ${state} property`}
+              width={1024}
+              height={1024}
+              loading="lazy"
+              className="h-48 w-full object-cover"
+            />
+            <figcaption className="p-4 text-sm text-muted-foreground">Attic mold and ventilation repair in {city}</figcaption>
+          </figure>
+          <figure className="overflow-hidden rounded-lg border bg-card">
+            <img
+              src={imgTeam}
+              alt={`Local mold remediation crew ready to serve ${city}, ${state} homeowners`}
+              width={1024}
+              height={1024}
+              loading="lazy"
+              className="h-48 w-full object-cover"
+            />
+            <figcaption className="p-4 text-sm text-muted-foreground">Our IICRC certified crew serving {city}</figcaption>
+          </figure>
+        </div>
+      </section>
+
 
       {/* Services grid */}
       <section className="border-t bg-secondary">
