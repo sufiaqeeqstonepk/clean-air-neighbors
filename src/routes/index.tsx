@@ -117,18 +117,19 @@ function Home() {
         </div>
       </section>
 
-      {/* Locations */}
+      {/* Areas We Serve */}
       <section className="container-x py-16">
-        <h2>Areas We Serve</h2>
-        <p className="mt-3 text-muted-foreground max-w-2xl">Based in Greensboro, working across the Piedmont Triad.</p>
-        <div className="mt-8 grid gap-3 sm:grid-cols-2 md:grid-cols-4">
+        <h2>Areas We Serve in North Carolina</h2>
+        <p className="mt-3 text-muted-foreground max-w-2xl">Based in Greensboro, we serve homes and businesses across North Carolina. Pick your city below for local details.</p>
+        <div className="mt-8 grid gap-x-4 gap-y-2 grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 text-sm">
           {locations.map(l => (
-            <Link key={l.slug} to="/locations/$slug" params={{ slug: l.slug }} className="rounded-lg border bg-card p-4 text-sm font-semibold hover:border-brand hover:text-brand">
-              {l.city}, {l.state}
+            <Link key={l.slug} to="/locations/$slug" params={{ slug: l.slug }} className="py-1 text-foreground/80 hover:text-brand hover:underline">
+              {l.city}
             </Link>
           ))}
         </div>
       </section>
+
     </Layout>
   );
 }

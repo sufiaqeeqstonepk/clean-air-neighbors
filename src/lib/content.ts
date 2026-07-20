@@ -338,10 +338,33 @@ export const locationContent: Record<string, LocationData> = {
   },
 };
 
+import { ncCityBySlug } from "@/lib/nc-cities";
+
 export function getLocationContent(slug: string) {
   const meta = locations.find(l => l.slug === slug);
-  const c = locationContent[slug];
-  if (!meta || !c) return null;
-  return { slug, city: meta.city, state: meta.state, ...c };
+  if (!meta) return null;
+  const curated = locationContent[slug];
+  if (curated) return { slug, city: meta.city, state: meta.state, ...curated };
+
+  const nc = ncCityBySlug[slug];
+  if (!nc) return null;
+  const zips = nc.zips.length ? nc.zips : ["Call for coverage"];
+  return {
+    slug,
+    city: meta.city,
+    state: meta.state,
+    metaTitle: `Best Mold Removal Company in ${meta.city}, NC | Greensboro Mold Removal Company`,
+    metaDesc: `Certified mold inspection and remediation in ${meta.city}, NC. Licensed, insured, IICRC trained. Call (743) 373-1171 for a free quote.`,
+    h1: `Mold Removal in ${meta.city}, NC`,
+    intro: `${meta.city} is one of the North Carolina communities we serve for full mold inspection and remediation. Our local crews handle homes and businesses with the same IICRC S520 process we use across the state.`,
+    landmarks: `We work every neighborhood in ${meta.city} and the surrounding area.`,
+    climate: `${meta.city} shares the humid, storm-prone climate common across North Carolina. That means crawl spaces, attics, and basements are all common places we find mold, especially in homes with older ventilation or drainage problems.`,
+    neighborhoods: [],
+    zips,
+    geo: { lat: nc.lat, lng: nc.lng },
+    nearby: nc.nearby,
+    stats: commonStats,
+  };
 }
+
 
