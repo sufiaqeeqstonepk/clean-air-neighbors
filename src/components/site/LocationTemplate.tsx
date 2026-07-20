@@ -2,6 +2,12 @@ import { Link } from "@tanstack/react-router";
 import { Phone, MapPin, Star } from "lucide-react";
 import { business, locations } from "@/lib/business";
 import type { LocationData } from "@/lib/content";
+import imgInspection from "@/assets/loc-inspection.jpg";
+import imgContainment from "@/assets/loc-containment.jpg";
+import imgBeforeAfter from "@/assets/loc-before-after.jpg";
+import imgCrawlspace from "@/assets/loc-crawlspace.jpg";
+import imgAttic from "@/assets/loc-attic.jpg";
+import imgTeam from "@/assets/loc-team.jpg";
 
 export type LocationTemplateProps = {
   slug: string;
