@@ -21,6 +21,7 @@ import { Route as ContactRouteImport } from './routes/contact'
 import { Route as CertificationsRouteImport } from './routes/certifications'
 import { Route as CaseStudiesRouteImport } from './routes/case-studies'
 import { Route as BlogRouteImport } from './routes/blog'
+import { Route as AreasWeServeRouteImport } from './routes/areas-we-serve'
 import { Route as AccessibilityRouteImport } from './routes/accessibility'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
@@ -87,6 +88,11 @@ const BlogRoute = BlogRouteImport.update({
   path: '/blog',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AreasWeServeRoute = AreasWeServeRouteImport.update({
+  id: '/areas-we-serve',
+  path: '/areas-we-serve',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const AccessibilityRoute = AccessibilityRouteImport.update({
   id: '/accessibility',
   path: '/accessibility',
@@ -117,6 +123,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/accessibility': typeof AccessibilityRoute
+  '/areas-we-serve': typeof AreasWeServeRoute
   '/blog': typeof BlogRoute
   '/case-studies': typeof CaseStudiesRoute
   '/certifications': typeof CertificationsRoute
@@ -136,6 +143,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/accessibility': typeof AccessibilityRoute
+  '/areas-we-serve': typeof AreasWeServeRoute
   '/blog': typeof BlogRoute
   '/case-studies': typeof CaseStudiesRoute
   '/certifications': typeof CertificationsRoute
@@ -156,6 +164,7 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/accessibility': typeof AccessibilityRoute
+  '/areas-we-serve': typeof AreasWeServeRoute
   '/blog': typeof BlogRoute
   '/case-studies': typeof CaseStudiesRoute
   '/certifications': typeof CertificationsRoute
@@ -177,6 +186,7 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/accessibility'
+    | '/areas-we-serve'
     | '/blog'
     | '/case-studies'
     | '/certifications'
@@ -196,6 +206,7 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/accessibility'
+    | '/areas-we-serve'
     | '/blog'
     | '/case-studies'
     | '/certifications'
@@ -215,6 +226,7 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/accessibility'
+    | '/areas-we-serve'
     | '/blog'
     | '/case-studies'
     | '/certifications'
@@ -235,6 +247,7 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
   AccessibilityRoute: typeof AccessibilityRoute
+  AreasWeServeRoute: typeof AreasWeServeRoute
   BlogRoute: typeof BlogRoute
   CaseStudiesRoute: typeof CaseStudiesRoute
   CertificationsRoute: typeof CertificationsRoute
@@ -337,6 +350,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof BlogRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/areas-we-serve': {
+      id: '/areas-we-serve'
+      path: '/areas-we-serve'
+      fullPath: '/areas-we-serve'
+      preLoaderRoute: typeof AreasWeServeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/accessibility': {
       id: '/accessibility'
       path: '/accessibility'
@@ -379,6 +399,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
   AccessibilityRoute: AccessibilityRoute,
+  AreasWeServeRoute: AreasWeServeRoute,
   BlogRoute: BlogRoute,
   CaseStudiesRoute: CaseStudiesRoute,
   CertificationsRoute: CertificationsRoute,

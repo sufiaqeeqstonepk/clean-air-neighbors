@@ -30,18 +30,8 @@ export function Header() {
               </div>
             </div>
           </div>
-          <div className="group relative">
-            <button className="flex items-center gap-1 hover:text-brand">Locations <ChevronDown className="h-3 w-3" /></button>
-            <div className="invisible group-hover:visible absolute left-1/2 top-full -translate-x-1/2 pt-3">
-              <div className="grid w-[320px] grid-cols-1 gap-1 rounded-lg border bg-popover p-3 shadow-lg">
-                {locations.map((l) => (
-                  <Link key={l.slug} to="/locations/$slug" params={{ slug: l.slug }} className="rounded px-3 py-2 text-sm hover:bg-brand-light hover:text-brand">
-                    {l.city}, {l.state}
-                  </Link>
-                ))}
-              </div>
-            </div>
-          </div>
+          <Link to="/areas-we-serve" className="hover:text-brand">Areas We Serve</Link>
+
           <Link to="/about" className="hover:text-brand">About</Link>
           <Link to="/process" className="hover:text-brand">Process</Link>
           <Link to="/reviews" className="hover:text-brand">Reviews</Link>
