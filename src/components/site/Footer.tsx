@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { Phone, MapPin, Clock } from "lucide-react";
-import { business, services, locations } from "@/lib/business";
+import { business, services } from "@/lib/business";
+
 
 export function Footer() {
   return (
