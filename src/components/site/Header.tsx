@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { useState } from "react";
 import { Phone, Menu, X, ChevronDown } from "lucide-react";
-import { business, services, locations } from "@/lib/business";
+import { business, services } from "@/lib/business";
 import logo from "@/assets/logo.png";
 
 export function Header() {
@@ -30,18 +30,8 @@ export function Header() {
               </div>
             </div>
           </div>
-          <div className="group relative">
-            <button className="flex items-center gap-1 hover:text-brand">Locations <ChevronDown className="h-3 w-3" /></button>
-            <div className="invisible group-hover:visible absolute left-1/2 top-full -translate-x-1/2 pt-3">
-              <div className="grid w-[320px] grid-cols-1 gap-1 rounded-lg border bg-popover p-3 shadow-lg">
-                {locations.map((l) => (
-                  <Link key={l.slug} to="/locations/$slug" params={{ slug: l.slug }} className="rounded px-3 py-2 text-sm hover:bg-brand-light hover:text-brand">
-                    {l.city}, {l.state}
-                  </Link>
-                ))}
-              </div>
-            </div>
-          </div>
+          <Link to="/areas-we-serve" className="hover:text-brand">Areas We Serve</Link>
+
           <Link to="/about" className="hover:text-brand">About</Link>
           <Link to="/process" className="hover:text-brand">Process</Link>
           <Link to="/reviews" className="hover:text-brand">Reviews</Link>
@@ -69,11 +59,8 @@ export function Header() {
                 {services.map(s => <MobileLink key={s.slug} to="/services/$slug" params={{ slug: s.slug }} onClick={() => setOpen(false)}>{s.title}</MobileLink>)}
               </div>
             </details>
-            <details className="group"><summary className="cursor-pointer py-2 font-medium">Locations</summary>
-              <div className="pl-3 py-1 space-y-1">
-                {locations.map(l => <MobileLink key={l.slug} to="/locations/$slug" params={{ slug: l.slug }} onClick={() => setOpen(false)}>{l.city}, {l.state}</MobileLink>)}
-              </div>
-            </details>
+            <MobileLink to="/areas-we-serve" onClick={() => setOpen(false)}>Areas We Serve</MobileLink>
+
             <MobileLink to="/about" onClick={() => setOpen(false)}>About</MobileLink>
             <MobileLink to="/process" onClick={() => setOpen(false)}>Process</MobileLink>
             <MobileLink to="/team" onClick={() => setOpen(false)}>Team</MobileLink>
