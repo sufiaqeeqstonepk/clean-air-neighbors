@@ -27,13 +27,16 @@ export function Footer() {
         </div>
 
         <div>
-          <h4 className="text-sm font-semibold">Locations</h4>
+          <h4 className="text-sm font-semibold">Service Area</h4>
           <ul className="mt-3 space-y-1.5 text-sm text-muted-foreground">
-            {locations.map(l => (
-              <li key={l.slug}><Link to="/locations/$slug" params={{ slug: l.slug }} className="hover:text-brand">{l.city}, {l.state}</Link></li>
-            ))}
+            <li><Link to="/areas-we-serve" className="hover:text-brand">Areas We Serve in NC</Link></li>
+            <li><Link to="/locations/$slug" params={{ slug: "greensboro" }} className="hover:text-brand">Greensboro, NC</Link></li>
+            <li><Link to="/locations/$slug" params={{ slug: "high-point" }} className="hover:text-brand">High Point, NC</Link></li>
+            <li><Link to="/locations/$slug" params={{ slug: "winston-salem" }} className="hover:text-brand">Winston-Salem, NC</Link></li>
+            <li><Link to="/locations/$slug" params={{ slug: "burlington" }} className="hover:text-brand">Burlington, NC</Link></li>
           </ul>
         </div>
+
 
         <div>
           <h4 className="text-sm font-semibold">Company</h4>
