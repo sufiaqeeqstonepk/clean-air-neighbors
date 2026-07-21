@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { useState } from "react";
 import { Phone, Menu, X, ChevronDown } from "lucide-react";
-import { business, services, locations } from "@/lib/business";
+import { business, services } from "@/lib/business";
 import logo from "@/assets/logo.png";
 
 export function Header() {
