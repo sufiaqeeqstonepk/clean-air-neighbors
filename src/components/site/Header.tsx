@@ -61,11 +61,6 @@ export function Header() {
             </details>
             <MobileLink to="/areas-we-serve" onClick={() => setOpen(false)}>Areas We Serve</MobileLink>
 
-            <details className="group"><summary className="cursor-pointer py-2 font-medium">Locations</summary>
-              <div className="pl-3 py-1 space-y-1">
-                {locations.map(l => <MobileLink key={l.slug} to="/locations/$slug" params={{ slug: l.slug }} onClick={() => setOpen(false)}>{l.city}, {l.state}</MobileLink>)}
-              </div>
-            </details>
             <MobileLink to="/about" onClick={() => setOpen(false)}>About</MobileLink>
             <MobileLink to="/process" onClick={() => setOpen(false)}>Process</MobileLink>
             <MobileLink to="/team" onClick={() => setOpen(false)}>Team</MobileLink>
