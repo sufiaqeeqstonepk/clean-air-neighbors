@@ -73,6 +73,56 @@ function Home() {
         </div>
       </section>
 
+      {/* Certifications strip */}
+      <section className="border-b bg-background">
+        <div className="container-x py-10">
+          <p className="text-center text-xs font-semibold uppercase tracking-wider text-muted-foreground">Certified · Licensed · Insured</p>
+          <div className="mt-6 grid grid-cols-2 gap-6 sm:grid-cols-4 items-center justify-items-center">
+            {[
+              { img: certIicrc, alt: "IICRC S520 Certified Firm badge" },
+              { img: certEpa, alt: "EPA Lead-Safe Certified Firm badge" },
+              { img: certAmrt, alt: "IICRC AMRT certification badge" },
+              { img: certNc, alt: "Licensed North Carolina General Contractor badge" },
+            ].map(c => (
+              <img key={c.alt} src={c.img} alt={c.alt} loading="lazy" width={800} height={800} className="h-24 w-auto md:h-28 object-contain" />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Founder section */}
+      <section className="container-x py-16">
+        <div className="grid gap-10 lg:grid-cols-2 items-center">
+          <img src={founderHome} alt="Founder of Greensboro Mold Removal Company standing in front of a service van" width={1200} height={1200} loading="lazy" className="rounded-xl w-full h-auto shadow-lg" />
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-wider text-brand">Meet the Founder</p>
+            <h2 className="mt-3">A local owner who answers the phone</h2>
+            <p className="mt-4 text-muted-foreground">
+              Our founder started this company in 2012 after seeing too many neighbors get bad advice and inflated quotes on mold work. He still runs the daily estimates and shows up on the big jobs.
+            </p>
+            <p className="mt-3 text-muted-foreground">
+              The rule has not changed since day one: tell people the truth, do the work the right way, and stand behind it in writing. That is why most of our jobs come from referrals from past customers, plumbers, and real estate agents around the Triad.
+            </p>
+            <ul className="mt-6 grid gap-2 text-sm">
+              {[
+                "Family owned and operated in Greensboro",
+                "12+ years of hands-on remediation experience",
+                "IICRC and EPA trained crews on every job",
+                "Free written estimates before any work starts",
+              ].map(x => <li key={x} className="flex gap-2"><CheckCircle2 className="h-5 w-5 text-brand shrink-0 mt-0.5" /><span>{x}</span></li>)}
+            </ul>
+            <div className="mt-6 flex flex-wrap gap-3">
+              <a href={`tel:${business.phoneRaw}`} className="inline-flex items-center gap-2 rounded-md bg-brand px-5 py-3 font-semibold text-brand-foreground hover:bg-brand-dark">
+                <Phone className="h-4 w-4" /> Call {business.phoneDisplay}
+              </a>
+              <Link to="/about" className="inline-flex items-center gap-2 rounded-md border border-brand px-5 py-3 font-semibold text-brand hover:bg-brand-light">
+                About Our Team
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Services grid */}
       <section className="container-x py-16">
         <div className="max-w-2xl">
