@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { Phone, MapPin, Clock } from "lucide-react";
 import { business, services } from "@/lib/business";
+import logo from "@/assets/logo-horizontal.png";
 
 
 export function Footer() {
@@ -8,8 +9,9 @@ export function Footer() {
     <footer className="mt-24 border-t bg-secondary">
       <div className="container-x py-12 grid gap-8 md:grid-cols-4">
         <div>
-          <h3 className="text-base font-bold text-brand">{business.name}</h3>
-          <p className="mt-3 text-sm text-muted-foreground">Local mold inspection and remediation serving the Greensboro Triad since 2012.</p>
+          <img src={logo} alt={`${business.name} logo`} width={1600} height={544} loading="lazy" className="h-14 w-auto" />
+          <h3 className="mt-3 text-base font-bold text-brand">{business.name}</h3>
+          <p className="mt-2 text-sm text-muted-foreground">Local mold inspection and remediation serving the Greensboro Triad since 2012.</p>
           <div className="mt-4 space-y-2 text-sm">
             <a href={`tel:${business.phoneRaw}`} className="flex items-center gap-2 font-semibold text-brand"><Phone className="h-4 w-4" /> {business.phoneDisplay}</a>
             <p className="flex items-start gap-2"><MapPin className="h-4 w-4 mt-0.5" /> {business.address.street}<br />{business.address.city}, {business.address.state} {business.address.zip}</p>

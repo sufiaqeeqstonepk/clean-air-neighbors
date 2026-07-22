@@ -2,18 +2,21 @@ import { Link } from "@tanstack/react-router";
 import { useState } from "react";
 import { Phone, Menu, X, ChevronDown } from "lucide-react";
 import { business, services } from "@/lib/business";
-import logo from "@/assets/logo.png";
+import logo from "@/assets/logo-horizontal.png";
 
 export function Header() {
   const [open, setOpen] = useState(false);
   return (
     <header className="sticky top-0 z-40 w-full border-b bg-background/95 backdrop-blur">
-      <div className="container-x flex h-16 items-center justify-between gap-4">
-        <Link to="/" className="flex items-center gap-2">
-          <img src={logo} alt={`${business.name} logo`} width={40} height={40} className="h-10 w-10" />
-          <span className="hidden sm:inline text-sm font-bold leading-tight text-brand">
-            Greensboro Mold<br/>Removal Company
-          </span>
+      <div className="container-x flex h-24 items-center justify-between gap-4">
+        <Link to="/" className="flex items-center">
+          <img
+            src={logo}
+            alt={`${business.name} logo`}
+            width={1600}
+            height={544}
+            className="h-16 md:h-20 w-auto"
+          />
         </Link>
 
         <nav className="hidden lg:flex items-center gap-6 text-sm font-medium">
