@@ -3,6 +3,11 @@ import { Phone, Shield, Clock, Award, CheckCircle2, Star } from "lucide-react";
 import { Layout } from "@/components/site/Layout";
 import { business, services, locations } from "@/lib/business";
 import hero from "@/assets/hero.jpg";
+import founderHome from "@/assets/founder-home.jpg";
+import certIicrc from "@/assets/cert-iicrc-s520.jpg";
+import certEpa from "@/assets/cert-epa-lead.jpg";
+import certAmrt from "@/assets/cert-amrt.jpg";
+import certNc from "@/assets/cert-nc-license.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({

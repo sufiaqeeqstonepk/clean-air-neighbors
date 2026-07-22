@@ -2,6 +2,10 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Layout } from "@/components/site/Layout";
 import { PageHeader, Section } from "@/components/site/PageHeader";
 import { Award } from "lucide-react";
+import certIicrc from "@/assets/cert-iicrc-s520.jpg";
+import certEpa from "@/assets/cert-epa-lead.jpg";
+import certAmrt from "@/assets/cert-amrt.jpg";
+import certNc from "@/assets/cert-nc-license.jpg";
 
 export const Route = createFileRoute("/certifications")({
   head: () => ({
@@ -15,6 +19,13 @@ export const Route = createFileRoute("/certifications")({
   }),
   component: Certs,
 });
+
+const certImages = [
+  { img: certIicrc, alt: "IICRC S520 Certified Firm badge" },
+  { img: certEpa, alt: "EPA Lead-Safe Certified Firm badge" },
+  { img: certAmrt, alt: "IICRC AMRT Applied Microbial Remediation Technician badge" },
+  { img: certNc, alt: "Licensed North Carolina General Contractor badge" },
+];
 
 const certs = [
   { name: "IICRC S520 Certified Firm", what: "The Institute of Inspection Cleaning and Restoration Certification sets the industry standard for mold remediation. S520 is the specific standard for how a mold job should be run, from containment to clearance." },
@@ -32,6 +43,13 @@ function Certs() {
     <Layout>
       <PageHeader eyebrow="Trust" title="Certifications and licensing" subtitle="Here is what our credentials actually mean for your project." />
       <Section>
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4 mb-12">
+          {certImages.map(c => (
+            <div key={c.alt} className="rounded-lg border bg-card p-6 flex items-center justify-center">
+              <img src={c.img} alt={c.alt} loading="lazy" width={800} height={800} className="w-full h-auto max-w-[220px]" />
+            </div>
+          ))}
+        </div>
         <div className="grid gap-4 md:grid-cols-2">
           {certs.map(c => (
             <div key={c.name} className="rounded-lg border bg-card p-6">
