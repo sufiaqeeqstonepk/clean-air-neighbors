@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { Phone, Shield, Clock, Award, CheckCircle2, Star } from "lucide-react";
 import { Layout } from "@/components/site/Layout";
 import { business, services, locations } from "@/lib/business";
+import { getCanonicalUrl } from "@/lib/canonical";
 import hero from "@/assets/hero.jpg";
 import founderHome from "@/assets/founder-home.jpg";
 import certIicrc from "@/assets/cert-iicrc-s520.jpg";
@@ -20,11 +21,11 @@ export const Route = createFileRoute("/")({
       { name: "description", content: "Certified mold inspection and remediation in Greensboro, NC. Licensed, insured, IICRC trained. 24/7 emergency response. Call (743) 373-1171." },
       { property: "og:title", content: "Greensboro Mold Removal Company" },
       { property: "og:description", content: "Local mold inspection and remediation in Greensboro, NC. Call (743) 373-1171." },
-      { property: "og:url", content: "/" },
+      { property: "og:url", content: getCanonicalUrl("/") },
       { property: "og:image", content: "/og-image.jpg" },
       { name: "twitter:image", content: "/og-image.jpg" },
     ],
-    links: [{ rel: "canonical", href: "/" }],
+    links: [{ rel: "canonical", href: getCanonicalUrl("/") }],
   }),
   component: Home,
 });
@@ -97,7 +98,7 @@ function Home() {
       {/* Founder section */}
       <section className="container-x py-16">
         <div className="grid gap-10 lg:grid-cols-2 items-center">
-          <img src={founderHome} alt="Founder of Greensboro Mold Removal Company standing in front of a service van" width={1200} height={1200} loading="lazy" className="rounded-xl w-full h-auto shadow-lg" />
+          <img src={founderHome} alt="Founder of Greensboro Mold Removal Company standing in front of a service van" width={1200} height={1200} loading="lazy" className="rounded-xl w-full h-auto" />
           <div>
             <p className="text-xs font-semibold uppercase tracking-wider text-brand">Meet the Founder</p>
             <h2 className="mt-3">A local owner who answers the phone</h2>
@@ -105,7 +106,7 @@ function Home() {
               Our founder started this company in 2012 after seeing too many neighbors get bad advice and inflated quotes on mold work. He still runs the daily estimates and shows up on the big jobs.
             </p>
             <p className="mt-3 text-muted-foreground">
-              The rule has not changed since day one: tell people the truth, do the work the right way, and stand behind it in writing. That is why most of our jobs come from referrals from past customers, plumbers, and real estate agents around the Triad.
+              The rule has not changed since day one: tell people the truth, do the work the right way, and stand behind it in writing. That is why most of our jobs come from referrals from past customers and contractors.
             </p>
             <ul className="mt-6 grid gap-2 text-sm">
               {[
@@ -241,11 +242,11 @@ function Home() {
         </div>
         <div className="mt-8 grid gap-4 md:grid-cols-2">
           {[
-            { q: "How much does mold removal cost in Greensboro?", a: "Most residential jobs run between $500 and $6,000 depending on the size of the area and the source of the water. Small bathroom spots are on the low end. A full basement or crawl space is on the high end. We give a written quote before any work starts." },
-            { q: "Do I need a mold test before remediation?", a: "Not always. If you can see the mold and know where the water came from, testing is optional. Testing helps when the source is hidden, when a tenant or buyer needs proof, or when clearance is required after the job." },
+            { q: "How much does mold removal cost in Greensboro?", a: "Most residential jobs run between $500 and $6,000 depending on the size of the area and the source of the water. Small bathroom mold typically costs $500-$1,500 to remove." },
+            { q: "Do I need a mold test before remediation?", a: "Not always. If you can see the mold and know where the water came from, testing is optional. Testing helps when the source is hidden." },
             { q: "How long does mold remediation take?", a: "A small job takes one day. A typical basement or attic job takes 2 to 4 days. Larger jobs with structural drying can run a week or more." },
-            { q: "Is black mold really dangerous?", a: "Any indoor mold growth should be taken seriously, but the health effects depend on the person and the amount of exposure. We handle every job with proper containment and personal protection regardless of the species." },
-            { q: "Will homeowners insurance cover it?", a: "Insurance usually covers mold when it comes from a sudden covered event, like a burst pipe. Long-term leaks and humidity problems are often excluded. We document everything so you can file a strong claim." },
+            { q: "Is black mold really dangerous?", a: "Any indoor mold growth should be taken seriously, but the health effects depend on the person and the amount of exposure. We handle every job to the same IICRC standard." },
+            { q: "Will homeowners insurance cover it?", a: "Insurance usually covers mold when it comes from a sudden covered event, like a burst pipe. Long-term leaks and humidity problems are often not covered." },
             { q: "Do you offer free inspections?", a: "Yes. On-site inspections in the Greensboro area are free and come with a written quote. There is no obligation to book work with us." },
           ].map(f => (
             <details key={f.q} className="group rounded-lg border bg-card p-5">
@@ -296,14 +297,14 @@ function Home() {
       {/* SEO: Mold Removal Company Greensboro */}
       <section className="container-x py-16">
         <div className="grid gap-10 lg:grid-cols-2 items-center">
-          <img src={seoGreensboroCompany} alt="Mold removal company technician inspecting a ceiling in a Greensboro home" width={1024} height={1024} loading="lazy" className="rounded-xl w-full h-auto shadow-lg order-2 lg:order-1" />
+          <img src={seoGreensboroCompany} alt="Mold removal company technician inspecting a ceiling in a Greensboro home" width={1024} height={1024} loading="lazy" className="rounded-xl w-full h-auto" />
           <div className="order-1 lg:order-2">
             <h2>Mold Removal Company Greensboro</h2>
             <p className="mt-4 text-muted-foreground">
-              Greensboro Mold Removal Company is a locally owned crew based on South Eugene Street in downtown Greensboro. We handle mold inspections, air testing, and full remediation for homes and small businesses across Guilford County. Every job starts with a free on-site walkthrough and ends with a written report you can share with your insurance adjuster or real estate agent.
+              Greensboro Mold Removal Company is a locally owned crew based on South Eugene Street in downtown Greensboro. We handle mold inspections, air testing, and full remediation for homes and businesses across the Triad.
             </p>
             <p className="mt-3 text-muted-foreground">
-              Our lead technicians live in Greensboro, so we know the older Fisher Park bungalows, the newer builds out toward Lake Jeanette, and the humid crawl spaces that come with almost every home in this part of North Carolina. That local knowledge helps us find the water source faster and keep your bill lower.
+              Our lead technicians live in Greensboro, so we know the older Fisher Park bungalows, the newer builds out toward Lake Jeanette, and the humid crawl spaces that come with almost every home in North Carolina.
             </p>
             <ul className="mt-6 grid gap-2 text-sm">
               {["Free written estimates in Greensboro city limits", "IICRC S520 certified remediation on every job", "Insurance-ready documentation and photos", "Locally owned and operated since 2012"].map(x => (
@@ -323,13 +324,13 @@ function Home() {
           <div>
             <h2>Mold Removal Services Near Me</h2>
             <p className="mt-4 text-muted-foreground">
-              Searching for mold removal services near you usually means one thing: you already see a problem and you want it gone this week. Our trucks stage out of central Greensboro and reach most Triad neighborhoods within 30 to 45 minutes. Same-day inspections are available Monday through Saturday, and our 24/7 line covers active leaks and floods on nights and Sundays.
+              Searching for mold removal services near you usually means one thing: you already see a problem and you want it gone this week. Our trucks stage out of central Greensboro and reach most locations within 30 minutes.
             </p>
             <p className="mt-3 text-muted-foreground">
-              We provide the full menu of services under one roof so you do not have to hire three different companies. That includes moisture mapping, air quality testing, HEPA filtration, structural drying, safe drywall and insulation removal, antimicrobial treatment, and post-remediation clearance testing through an independent lab.
+              We provide the full menu of services under one roof so you do not have to hire three different companies. That includes moisture mapping, air quality testing, HEPA filtration, structural drying, and clearance testing.
             </p>
             <ul className="mt-6 grid gap-2 text-sm">
-              {["Same-day appointments most weekdays", "24/7 emergency response for active water damage", "One crew handles inspection, removal, and clearance", "Straight pricing, no upsells at the door"].map(x => (
+              {["Same-day appointments most weekdays", "24/7 emergency response for active water damage", "One crew handles inspection, removal, and clearance", "Straight pricing, no upsells at the end"].map(x => (
                 <li key={x} className="flex gap-2"><CheckCircle2 className="h-5 w-5 text-brand shrink-0 mt-0.5" /><span>{x}</span></li>
               ))}
             </ul>
@@ -337,21 +338,21 @@ function Home() {
               <Phone className="h-4 w-4" /> Call {business.phoneDisplay}
             </a>
           </div>
-          <img src={seoServicesNearMe} alt="Mold remediation service van and technicians arriving at a local home for a nearby appointment" width={1024} height={1024} loading="lazy" className="rounded-xl w-full h-auto shadow-lg" />
+          <img src={seoServicesNearMe} alt="Mold remediation service van and technicians arriving at a local home for a nearby appointment" width={1024} height={1024} loading="lazy" className="rounded-xl w-full h-auto" />
         </div>
       </section>
 
       {/* SEO: Mold Removal Company Near Me */}
       <section className="container-x py-16">
         <div className="grid gap-10 lg:grid-cols-2 items-center">
-          <img src={seoCompanyNearMe} alt="Local mold removal company technician greeting a homeowner at the front door" width={1024} height={1024} loading="lazy" className="rounded-xl w-full h-auto shadow-lg order-2 lg:order-1" />
+          <img src={seoCompanyNearMe} alt="Local mold removal company technician greeting a homeowner at the front door" width={1024} height={1024} loading="lazy" className="rounded-xl w-full h-auto" />
           <div className="order-1 lg:order-2">
             <h2>Mold Removal Company Near Me</h2>
             <p className="mt-4 text-muted-foreground">
-              Picking a mold removal company near you is really about trust. You are letting a stranger inside your home to open up walls and price out the fix. We keep that trust simple. The owner still runs estimates. The same crew that inspects your home does the removal. And every quote is in writing before we touch a saw.
+              Picking a mold removal company near you is really about trust. You are letting a stranger inside your home to open up walls and price out the fix. We keep that trust simple. The owner answers the phone.
             </p>
             <p className="mt-3 text-muted-foreground">
-              We are not a national franchise routing your call to a shared queue. When you dial our number, you reach a Greensboro dispatcher who knows the crews by name and can tell you when a truck will actually be at your door. That is the difference a nearby, locally owned company makes.
+              We are not a national franchise routing your call to a shared queue. When you dial our number, you reach a Greensboro dispatcher who knows the crews by name and can tell you when a truck will show up.
             </p>
             <ul className="mt-6 grid gap-2 text-sm">
               {["Owner-run estimates, not a sales rep", "Same crew from inspection to clearance", "Real Greensboro phone line, not a call center", "Hundreds of five-star reviews from Triad neighbors"].map(x => (
@@ -371,13 +372,13 @@ function Home() {
           <div>
             <h2>Greensboro NC Mold Removal Company</h2>
             <p className="mt-4 text-muted-foreground">
-              As a Greensboro NC mold removal company, we work under the rules that matter in North Carolina. Our team follows IICRC S520 remediation standards, EPA lead-safe practices for older homes, and the state general contractor licensing requirements for structural repairs. That combination lets us handle the full job legally from the first inspection to putting the drywall back up.
+              As a Greensboro NC mold removal company, we work under the rules that matter in North Carolina. Our team follows IICRC S520 remediation standards, EPA lead-safe practices for older homes, and NC licensing requirements.
             </p>
             <p className="mt-3 text-muted-foreground">
-              North Carolina weather drives most of the mold problems we see. Long humid summers, sudden heavy rains, and mild winters that never really dry things out all give mold a foothold. Our remediation plans account for the local climate, so the fix lasts through the next storm season instead of coming back in six months.
+              North Carolina weather drives most of the mold problems we see. Long humid summers, sudden heavy rains, and mild winters that never really dry things out all give mold a foothold. Our crews are trained for the NC Piedmont climate.
             </p>
             <ul className="mt-6 grid gap-2 text-sm">
-              {["North Carolina licensed general contractor", "IICRC and EPA certified crews", "Climate-aware remediation for the NC Piedmont", "Serving Greensboro, High Point, Winston-Salem and the wider Triad"].map(x => (
+              {["North Carolina licensed general contractor", "IICRC and EPA certified crews", "Climate-aware remediation for the NC Piedmont", "Serving Greensboro, High Point, Winston-Salem and beyond"].map(x => (
                 <li key={x} className="flex gap-2"><CheckCircle2 className="h-5 w-5 text-brand shrink-0 mt-0.5" /><span>{x}</span></li>
               ))}
             </ul>
@@ -385,7 +386,7 @@ function Home() {
               <Phone className="h-4 w-4" /> Call {business.phoneDisplay}
             </a>
           </div>
-          <img src={seoGreensboroNc} alt="Aerial view of Greensboro North Carolina neighborhoods served by our mold removal company" width={1024} height={1024} loading="lazy" className="rounded-xl w-full h-auto shadow-lg" />
+          <img src={seoGreensboroNc} alt="Aerial view of Greensboro North Carolina neighborhoods served by our mold removal company" width={1024} height={1024} loading="lazy" className="rounded-xl w-full h-auto" />
         </div>
       </section>
 
