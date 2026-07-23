@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Layout } from "@/components/site/Layout";
 import { PageHeader, Section } from "@/components/site/PageHeader";
+import { getCanonicalUrl } from "@/lib/canonical";
 import { business } from "@/lib/business";
 
 export const Route = createFileRoute("/privacy-policy")({
@@ -8,9 +9,9 @@ export const Route = createFileRoute("/privacy-policy")({
     meta: [
       { title: "Privacy Policy | Greensboro Mold Removal Company" },
       { name: "description", content: "How Greensboro Mold Removal Company collects, uses, stores, and protects your personal information." },
-      { property: "og:url", content: "/privacy-policy" },
+      { property: "og:url", content: getCanonicalUrl("/privacy-policy") },
     ],
-    links: [{ rel: "canonical", href: "/privacy-policy" }],
+    links: [{ rel: "canonical", href: getCanonicalUrl("/privacy-policy") }],
   }),
   component: Page,
 });
@@ -22,7 +23,7 @@ function Page() {
       <Section>
         <div className="max-w-3xl space-y-5 text-foreground/85">
           <p>
-            This Privacy Policy explains how {business.name} ("we", "us", or "our") collects, uses, shares, and protects information when you visit our website, call our office, request a quote, or hire us for mold inspection, testing, or remediation services. By using our website or our services, you agree to the terms described here.
+            This Privacy Policy explains how {business.name} ("we", "us", or "our") collects, uses, shares, and protects information when you visit our website, call our office, request a quote, or hire us for work. By using our website or contacting us, you agree to this policy.
           </p>
 
           <h2 className="text-xl">Information we collect</h2>
@@ -48,7 +49,7 @@ function Page() {
           <h2 className="text-xl">How we share your information</h2>
           <p>We do not sell, rent, or trade your personal information. We only share it in these limited situations:</p>
           <ul className="list-disc pl-6 space-y-1">
-            <li>With trusted service providers who help us run our business, such as payment processors, scheduling software, and email providers, who are only allowed to use the information to perform their service for us.</li>
+            <li>With trusted service providers who help us run our business, such as payment processors, scheduling software, and email providers, who are only allowed to use the information to perform specific tasks.</li>
             <li>With independent testing labs when you approve air or surface sample testing.</li>
             <li>With your insurance carrier or adjuster when you ask us to file or support a claim on your behalf.</li>
             <li>When required by law, subpoena, court order, or a valid government request.</li>
@@ -57,37 +58,37 @@ function Page() {
 
           <h2 className="text-xl">Cookies and website analytics</h2>
           <p>
-            Our website uses standard cookies and basic analytics tools to understand how visitors use the site. This helps us fix problems, improve pages, and measure the results of our online efforts. We do not use tracking to build detailed personal profiles. You can block or delete cookies in your browser settings. Blocking cookies may affect how some parts of the site work.
+            Our website uses standard cookies and basic analytics tools to understand how visitors use the site. This helps us fix problems, improve pages, and measure the results of our online efforts. You can control cookies in your browser settings.
           </p>
 
           <h2 className="text-xl">Text messages and phone calls</h2>
           <p>
-            When you give us your phone number, you agree that we may call or text you about your quote, appointment, or active project. We do not use your number for mass marketing without your permission. Standard message and data rates from your carrier may apply. Reply STOP to any text to opt out of future non-urgent messages.
+            When you give us your phone number, you agree that we may call or text you about your quote, appointment, or active project. We do not use your number for mass marketing without your permission.
           </p>
 
           <h2 className="text-xl">Data retention</h2>
           <p>
-            We keep customer records for as long as needed to service your warranty, defend our work, and comply with tax and insurance rules. In most cases this is at least seven years after your project is completed. You can ask us to delete records that are no longer required by law.
+            We keep customer records for as long as needed to service your warranty, defend our work, and comply with tax and insurance rules. In most cases this is at least seven years after your project is complete.
           </p>
 
           <h2 className="text-xl">How we protect your information</h2>
           <p>
-            We use reasonable technical and physical safeguards to protect the information we hold, including secure office storage, password-protected systems, and encrypted payment processing. No method of transmission over the internet is 100 percent secure, so we cannot guarantee absolute security.
+            We use reasonable technical and physical safeguards to protect the information we hold, including secure office storage, password-protected systems, and encrypted payment processing. No method is 100% secure, but we take data security seriously.
           </p>
 
           <h2 className="text-xl">Children</h2>
           <p>
-            Our website and services are not directed to children under 13. We do not knowingly collect personal information from children. If you believe a child has provided us information, please contact us and we will delete it.
+            Our website and services are not directed to children under 13. We do not knowingly collect personal information from children. If you believe a child has provided us information, please contact us immediately.
           </p>
 
           <h2 className="text-xl">Your rights</h2>
           <p>
-            You can ask us to review, correct, update, or delete the personal information we have about you. To make a request, call us at {business.phoneDisplay} or email {business.email}. We may need to verify your identity before acting on the request.
+            You can ask us to review, correct, update, or delete the personal information we have about you. To make a request, call us at {business.phoneDisplay} or email {business.email}. We may ask for proof of identity before responding.
           </p>
 
           <h2 className="text-xl">Changes to this policy</h2>
           <p>
-            We may update this Privacy Policy from time to time. When we do, we will change the "Last updated" date at the top of this page. If the changes are significant, we will make a clear notice on the site.
+            We may update this Privacy Policy from time to time. When we do, we will change the "Last updated" date at the top of this page. If the changes are significant, we will make a clear notification. Your continued use of the website means you accept the updated policy.
           </p>
 
           <h2 className="text-xl">Contact</h2>

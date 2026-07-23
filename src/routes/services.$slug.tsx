@@ -5,6 +5,7 @@ import { PageHeader, Section } from "@/components/site/PageHeader";
 import { getServiceContent, type ServiceContent } from "@/lib/content";
 import { getServiceExtras } from "@/lib/service-extras";
 import { serviceSchema } from "@/components/site/SchemaMarkup";
+import { getCanonicalUrl } from "@/lib/canonical";
 import { business, locations, services } from "@/lib/business";
 
 export const Route = createFileRoute("/services/$slug")({
@@ -23,11 +24,11 @@ export const Route = createFileRoute("/services/$slug")({
         { name: "description", content: loaderData.metaDesc },
         { property: "og:title", content: loaderData.metaTitle },
         { property: "og:description", content: loaderData.metaDesc },
-        { property: "og:url", content: `/services/${params.slug}` },
+        { property: "og:url", content: getCanonicalUrl(`/services/${params.slug}`) },
         { property: "og:type", content: "article" },
         ...(ogImage ? [{ property: "og:image", content: ogImage }, { name: "twitter:image", content: ogImage }] : []),
       ],
-      links: [{ rel: "canonical", href: `/services/${params.slug}` }],
+      links: [{ rel: "canonical", href: getCanonicalUrl(`/services/${params.slug}`) }],
     };
   },
   component: ServicePage,

@@ -3,6 +3,7 @@ import { useState } from "react";
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
 import { Layout } from "@/components/site/Layout";
 import { PageHeader, Section } from "@/components/site/PageHeader";
+import { getCanonicalUrl } from "@/lib/canonical";
 import { business } from "@/lib/business";
 
 export const Route = createFileRoute("/contact")({
@@ -11,9 +12,9 @@ export const Route = createFileRoute("/contact")({
       { title: "Contact Us | Greensboro Mold Removal Company" },
       { name: "description", content: "Call (743) 373-1171 or send a message for a free mold inspection quote in Greensboro, NC and the Triad." },
       { property: "og:title", content: "Contact Greensboro Mold Removal Company" },
-      { property: "og:url", content: "/contact" },
+      { property: "og:url", content: getCanonicalUrl("/contact") },
     ],
-    links: [{ rel: "canonical", href: "/contact" }],
+    links: [{ rel: "canonical", href: getCanonicalUrl("/contact") }],
   }),
   component: Contact,
 });

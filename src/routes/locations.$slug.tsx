@@ -1,6 +1,7 @@
 import { createFileRoute, notFound } from "@tanstack/react-router";
 import { Layout } from "@/components/site/Layout";
 import { LocationTemplate } from "@/components/site/LocationTemplate";
+import { getCanonicalUrl } from "@/lib/canonical";
 import { getLocationContent } from "@/lib/content";
 
 export const Route = createFileRoute("/locations/$slug")({
@@ -19,9 +20,9 @@ export const Route = createFileRoute("/locations/$slug")({
         { name: "description", content: loaderData.metaDesc },
         { property: "og:title", content: loaderData.metaTitle },
         { property: "og:description", content: loaderData.metaDesc },
-        { property: "og:url", content: `/locations/${params.slug}` },
+        { property: "og:url", content: getCanonicalUrl(`/locations/${params.slug}`) },
       ],
-      links: [{ rel: "canonical", href: `/locations/${params.slug}` }],
+      links: [{ rel: "canonical", href: getCanonicalUrl(`/locations/${params.slug}`) }],
     };
   },
   component: LocationPage,
