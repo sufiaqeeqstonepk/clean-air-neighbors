@@ -8,6 +8,10 @@ import certIicrc from "@/assets/cert-iicrc-s520.jpg";
 import certEpa from "@/assets/cert-epa-lead.jpg";
 import certAmrt from "@/assets/cert-amrt.jpg";
 import certNc from "@/assets/cert-nc-license.jpg";
+import seoGreensboroCompany from "@/assets/seo-greensboro-company.jpg";
+import seoServicesNearMe from "@/assets/seo-services-near-me.jpg";
+import seoCompanyNearMe from "@/assets/seo-company-near-me.jpg";
+import seoGreensboroNc from "@/assets/seo-greensboro-nc.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -286,6 +290,102 @@ function Home() {
               {l.city}
             </Link>
           ))}
+        </div>
+      </section>
+
+      {/* SEO: Mold Removal Company Greensboro */}
+      <section className="container-x py-16">
+        <div className="grid gap-10 lg:grid-cols-2 items-center">
+          <img src={seoGreensboroCompany} alt="Mold removal company technician inspecting a ceiling in a Greensboro home" width={1024} height={1024} loading="lazy" className="rounded-xl w-full h-auto shadow-lg order-2 lg:order-1" />
+          <div className="order-1 lg:order-2">
+            <h2>Mold Removal Company Greensboro</h2>
+            <p className="mt-4 text-muted-foreground">
+              Greensboro Mold Removal Company is a locally owned crew based on South Eugene Street in downtown Greensboro. We handle mold inspections, air testing, and full remediation for homes and small businesses across Guilford County. Every job starts with a free on-site walkthrough and ends with a written report you can share with your insurance adjuster or real estate agent.
+            </p>
+            <p className="mt-3 text-muted-foreground">
+              Our lead technicians live in Greensboro, so we know the older Fisher Park bungalows, the newer builds out toward Lake Jeanette, and the humid crawl spaces that come with almost every home in this part of North Carolina. That local knowledge helps us find the water source faster and keep your bill lower.
+            </p>
+            <ul className="mt-6 grid gap-2 text-sm">
+              {["Free written estimates in Greensboro city limits", "IICRC S520 certified remediation on every job", "Insurance-ready documentation and photos", "Locally owned and operated since 2012"].map(x => (
+                <li key={x} className="flex gap-2"><CheckCircle2 className="h-5 w-5 text-brand shrink-0 mt-0.5" /><span>{x}</span></li>
+              ))}
+            </ul>
+            <a href={`tel:${business.phoneRaw}`} className="mt-6 inline-flex items-center gap-2 rounded-md bg-brand px-5 py-3 font-semibold text-brand-foreground hover:bg-brand-dark">
+              <Phone className="h-4 w-4" /> Call {business.phoneDisplay}
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* SEO: Mold Removal Services Near Me */}
+      <section className="bg-secondary">
+        <div className="container-x py-16 grid gap-10 lg:grid-cols-2 items-center">
+          <div>
+            <h2>Mold Removal Services Near Me</h2>
+            <p className="mt-4 text-muted-foreground">
+              Searching for mold removal services near you usually means one thing: you already see a problem and you want it gone this week. Our trucks stage out of central Greensboro and reach most Triad neighborhoods within 30 to 45 minutes. Same-day inspections are available Monday through Saturday, and our 24/7 line covers active leaks and floods on nights and Sundays.
+            </p>
+            <p className="mt-3 text-muted-foreground">
+              We provide the full menu of services under one roof so you do not have to hire three different companies. That includes moisture mapping, air quality testing, HEPA filtration, structural drying, safe drywall and insulation removal, antimicrobial treatment, and post-remediation clearance testing through an independent lab.
+            </p>
+            <ul className="mt-6 grid gap-2 text-sm">
+              {["Same-day appointments most weekdays", "24/7 emergency response for active water damage", "One crew handles inspection, removal, and clearance", "Straight pricing, no upsells at the door"].map(x => (
+                <li key={x} className="flex gap-2"><CheckCircle2 className="h-5 w-5 text-brand shrink-0 mt-0.5" /><span>{x}</span></li>
+              ))}
+            </ul>
+            <a href={`tel:${business.phoneRaw}`} className="mt-6 inline-flex items-center gap-2 rounded-md bg-brand px-5 py-3 font-semibold text-brand-foreground hover:bg-brand-dark">
+              <Phone className="h-4 w-4" /> Call {business.phoneDisplay}
+            </a>
+          </div>
+          <img src={seoServicesNearMe} alt="Mold remediation service van and technicians arriving at a local home for a nearby appointment" width={1024} height={1024} loading="lazy" className="rounded-xl w-full h-auto shadow-lg" />
+        </div>
+      </section>
+
+      {/* SEO: Mold Removal Company Near Me */}
+      <section className="container-x py-16">
+        <div className="grid gap-10 lg:grid-cols-2 items-center">
+          <img src={seoCompanyNearMe} alt="Local mold removal company technician greeting a homeowner at the front door" width={1024} height={1024} loading="lazy" className="rounded-xl w-full h-auto shadow-lg order-2 lg:order-1" />
+          <div className="order-1 lg:order-2">
+            <h2>Mold Removal Company Near Me</h2>
+            <p className="mt-4 text-muted-foreground">
+              Picking a mold removal company near you is really about trust. You are letting a stranger inside your home to open up walls and price out the fix. We keep that trust simple. The owner still runs estimates. The same crew that inspects your home does the removal. And every quote is in writing before we touch a saw.
+            </p>
+            <p className="mt-3 text-muted-foreground">
+              We are not a national franchise routing your call to a shared queue. When you dial our number, you reach a Greensboro dispatcher who knows the crews by name and can tell you when a truck will actually be at your door. That is the difference a nearby, locally owned company makes.
+            </p>
+            <ul className="mt-6 grid gap-2 text-sm">
+              {["Owner-run estimates, not a sales rep", "Same crew from inspection to clearance", "Real Greensboro phone line, not a call center", "Hundreds of five-star reviews from Triad neighbors"].map(x => (
+                <li key={x} className="flex gap-2"><CheckCircle2 className="h-5 w-5 text-brand shrink-0 mt-0.5" /><span>{x}</span></li>
+              ))}
+            </ul>
+            <a href={`tel:${business.phoneRaw}`} className="mt-6 inline-flex items-center gap-2 rounded-md bg-brand px-5 py-3 font-semibold text-brand-foreground hover:bg-brand-dark">
+              <Phone className="h-4 w-4" /> Call {business.phoneDisplay}
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* SEO: Greensboro NC Mold Removal Company */}
+      <section className="bg-brand-light">
+        <div className="container-x py-16 grid gap-10 lg:grid-cols-2 items-center">
+          <div>
+            <h2>Greensboro NC Mold Removal Company</h2>
+            <p className="mt-4 text-muted-foreground">
+              As a Greensboro NC mold removal company, we work under the rules that matter in North Carolina. Our team follows IICRC S520 remediation standards, EPA lead-safe practices for older homes, and the state general contractor licensing requirements for structural repairs. That combination lets us handle the full job legally from the first inspection to putting the drywall back up.
+            </p>
+            <p className="mt-3 text-muted-foreground">
+              North Carolina weather drives most of the mold problems we see. Long humid summers, sudden heavy rains, and mild winters that never really dry things out all give mold a foothold. Our remediation plans account for the local climate, so the fix lasts through the next storm season instead of coming back in six months.
+            </p>
+            <ul className="mt-6 grid gap-2 text-sm">
+              {["North Carolina licensed general contractor", "IICRC and EPA certified crews", "Climate-aware remediation for the NC Piedmont", "Serving Greensboro, High Point, Winston-Salem and the wider Triad"].map(x => (
+                <li key={x} className="flex gap-2"><CheckCircle2 className="h-5 w-5 text-brand shrink-0 mt-0.5" /><span>{x}</span></li>
+              ))}
+            </ul>
+            <a href={`tel:${business.phoneRaw}`} className="mt-6 inline-flex items-center gap-2 rounded-md bg-brand px-5 py-3 font-semibold text-brand-foreground hover:bg-brand-dark">
+              <Phone className="h-4 w-4" /> Call {business.phoneDisplay}
+            </a>
+          </div>
+          <img src={seoGreensboroNc} alt="Aerial view of Greensboro North Carolina neighborhoods served by our mold removal company" width={1024} height={1024} loading="lazy" className="rounded-xl w-full h-auto shadow-lg" />
         </div>
       </section>
 
