@@ -11,6 +11,7 @@ import { useEffect, type ReactNode } from "react";
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { Layout } from "@/components/site/Layout";
+import { FloatingCallButton } from "@/components/site/FloatingCallButton";
 
 function NotFoundComponent() {
   return (
@@ -82,6 +83,7 @@ function RootComponent() {
   return (
     <QueryClientProvider client={queryClient}>
       <Outlet />
+      <FloatingCallButton />
     </QueryClientProvider>
   );
 }
