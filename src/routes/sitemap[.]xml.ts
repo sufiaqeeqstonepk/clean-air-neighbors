@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import type {} from "@tanstack/react-start";
 import { services, locations } from "@/lib/business";
+import { blogPosts } from "@/lib/blog-posts";
 
 export const Route = createFileRoute("/sitemap.xml")({
   server: {
@@ -29,7 +30,8 @@ export const Route = createFileRoute("/sitemap.xml")({
         ];
         const svc = services.map(s => ({ path: `/services/${s.slug}`, priority: "0.8" }));
         const loc = locations.map(l => ({ path: `/locations/${l.slug}`, priority: "0.7" }));
-        const all = [...staticPaths, ...svc, ...loc];
+        const blog = blogPosts.map(b => ({ path: `/blog/${b.slug}`, priority: "0.6" }));
+        const all = [...staticPaths, ...svc, ...loc, ...blog];
         const lastmod = new Date().toISOString().slice(0, 10);
 
         const urls = all
