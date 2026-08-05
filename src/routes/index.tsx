@@ -24,6 +24,7 @@ export const Route = createFileRoute("/")({
       { property: "og:url", content: getCanonicalUrl("/") },
       { property: "og:image", content: "/og-image.jpg" },
       { name: "twitter:image", content: "/og-image.jpg" },
+      { name: "google-site-verification", content: "t7SwkI7xm263sRF22FxPNDmT4uXbAUc_AdoBKwG15tw" },
     ],
     links: [{ rel: "canonical", href: getCanonicalUrl("/") }],
   }),
